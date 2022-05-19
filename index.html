@@ -10,14 +10,17 @@
     <script src="https://unpkg.com/vue@3"></script>
 
 <div id="app">{{ message }}</div>
-
+<button onclick="changeText()">Change Text</button>
 <script>
   const { createApp } = Vue
-
+  let text = 'Hello Vue';
+  function changeText () {
+    text = 'Bye Vue';
+  }
   createApp({
     data() {
       return {
-        message: 'Hello Vue!'
+        message: text
       }
     }
   }).mount('#app')
